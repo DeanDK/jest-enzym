@@ -7,7 +7,6 @@ import { checkProps } from "../test/testUtils";
 import Congrats from "./Congrats";
 
 Enzyme.configure({ adapter: new EnzymeAdapter() });
-
 const defaultProps = { success: false };
 
 /**
@@ -36,7 +35,7 @@ test("renders no text when success props is false", () => {
 });
 
 test("renders non-empty congrats message when success prop is true", () => {
-  const wrapper = setup({ success: false });
+  const wrapper = setup({ success: true });
   const message = findByTestAttr(wrapper, "congrats-message");
   expect(message.text().length).not.toBe(0);
 });
